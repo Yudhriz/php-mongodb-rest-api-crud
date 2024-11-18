@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "2fd9fd3d-e3ff-4ce7-bb0c-88390199de22",
+		"name": "Big Data - Rest API CRUD PHP dan MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30299710"
+	},
+	"item": [
+		{
+			"name": "Create item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipe\": \"pulpen\",\r\n    \"harga\": 7000\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/php-mongodb-rest-api-crud/rest_resource_create.php",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"php-mongodb-rest-api-crud",
+						"rest_resource_create.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipe\": \"pulpen\",\r\n    \"harga\": 7000\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/php-mongodb-rest-api-crud/rest_resource_read.php",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"php-mongodb-rest-api-crud",
+						"rest_resource_read.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"where\" : \"{{oid}}\",\r\n    \"fields\" : [\r\n        {\"harga\": \"2750\"},\r\n        {\"tipe\": \"pena\"}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/php-mongodb-rest-api-crud/rest_resource_update.php",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"php-mongodb-rest-api-crud",
+						"rest_resource_update.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"where\" : \"{{oid}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/php-mongodb-rest-api-crud/rest_resource_delete.php",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"php-mongodb-rest-api-crud",
+						"rest_resource_delete.php"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "oid",
+			"value": "673b3149f0a575cb6d0fb0e7",
+			"type": "string"
+		}
+	]
+}
